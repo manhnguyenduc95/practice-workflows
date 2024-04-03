@@ -13,5 +13,5 @@ runs:
     - name: Maven Build
       id: maven-build
       run: |
-        mvn -U -B clean install -Pskip-tests
+        mvn -U -B clean install -DskipTests
       shell: bash
