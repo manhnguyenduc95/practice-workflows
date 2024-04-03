@@ -1,0 +1,17 @@
+name: build
+run-name: Building app for "${{ github.event.head_commit.message }}"
+
+on:
+  push:
+    branches-ignore: [master]
+
+jobs:
+  build:
+    name: build
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v4
+      - name: build
+        uses: ./.github/actions/build
