@@ -1,0 +1,30 @@
+# Spring Boot application settings
+spring:
+  application:
+    name: product-microservice
+  datasource:
+    url: jdbc:postgresql://localhost:5432/product
+    username: postgres
+    password: postgres
+  jpa:
+    generate-ddl: true  # Automatically generate DDL statements
+    hibernate:
+      ddl-auto: create  # Automatically create database schema based on JPA entity classes
+  output:
+    ansi:
+      enabled: ALWAYS
+
+# Logging settings
+logging:
+  level:
+    root: INFO  # Set the root logging level to INFO
+    com:
+      microservice:
+        product: DEBUG  # Set DEBUG level for com.microservice.product package
+  file:
+    name: product-microservice.log  # Specify the name of the log file
+    pattern:
+      console: "%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n"  # Pattern for console output
+      file: "%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n"  # Pattern for log file
+    max-history: 7  # Keep logs for the last 7 days
+    max-size: 10MB  # Set the maximum size of the log file to 10MB
