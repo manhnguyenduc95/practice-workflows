@@ -39,6 +39,7 @@ runs:
           echo "Waiting for PostgreSQL to start..."
           sleep 1
         done
+      shell: bash
     - name: Maven Build
       id: maven-build
       run: |
