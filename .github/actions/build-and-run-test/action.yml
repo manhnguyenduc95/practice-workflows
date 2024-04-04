@@ -27,12 +27,6 @@ runs:
         POSTGRES_DB: ${{ inputs.postgres-db }}
         POSTGRES_USER: ${{ inputs.postgres-user }}
         POSTGRES_PASSWORD: ${{ inputs.postgres-password }}
-      with:
-        args: >
-          -p 5432
-          -e POSTGRES_DB=$POSTGRES_DB
-          -e POSTGRES_USER=$POSTGRES_USER
-          -e POSTGRES_PASSWORD=$POSTGRES_PASSWORD
     - name: Wait for PostgreSQL to start
       run: |
         while ! pg_isready -q -h localhost -p 5432 -U postgres; do
