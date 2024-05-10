@@ -9,7 +9,7 @@ spring:
   jpa:
     generate-ddl: true  # Automatically generate DDL statements
     hibernate:
-      ddl-auto: create  # Automatically create database schema based on JPA entity classes
+      ddl-auto: update  # Automatically create database schema based on JPA entity classes
   output:
     ansi:
       enabled: ALWAYS
